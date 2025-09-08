@@ -32,7 +32,7 @@ Min Sepal Width = MIN('iris iris_dataset'[sepal_width])
 ------------------
 
 
-  [36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
+  [36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
 [31m    [39m[31mMin Petal Length = MIN('iris iris_dataset'[petal_length])[39m
         ^
 [31mSyntaxError[39m[31m:[39m invalid syntax
