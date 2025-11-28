@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dynamic Time Wrapping &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dynamic_time_wrapping';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="VOICE PREDICT UNTUK DATASET BUKA DAN TUTUP" href="voicepredict.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/mlk.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/mlk.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Selamat datang, Mata kuliah Proyek Sains Data
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">Tugas 1 Eksplorasi menggunakan Power BI</a></li>
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="tugas2.html">TUGAS 2 TRANSFORMASI DATA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Anomaly_Detection.html">Preprocessing Penghapusan outlier</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas3.html">Penyeimbangan dataset (SMOTE, ADASYN)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="timeseries.html">Time Series Dataset untuk Prediksi</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploys.html">DEPLOYMENT SYSTEM TIMESERIES</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="voicepredict.html">VOICE PREDICT UNTUK DATASET BUKA DAN TUTUP</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dynamic Time Wrapping</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdynamic_time_wrapping.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/dynamic_time_wrapping.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dynamic Time Wrapping</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dynamic Time Wrapping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-set-path">Import Library dan Set Path</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-extrac-dan-dtw">fungsi extrac dan DTW</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-data-lama-dan-ekstrak-mfcc">Collect data lama dan ekstrak mfcc</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-dtw">perhitungan DTW</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kemiripan-data-lama-dan-baru">kemiripan data lama dan baru</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dynamic-time-wrapping">
+<h1>Dynamic Time Wrapping<a class="headerlink" href="#dynamic-time-wrapping" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="import-library-dan-set-path">
+<h1>Import Library dan Set Path<a class="headerlink" href="#import-library-dan-set-path" title="Link to this heading">#</a></h1>
+<p>kode tersebut berfungsi untuk mendefinisikan pengaturan dasar yang diperlukan dalam proses pembacaan, ekstraksi, dan perbandingan data audio menggunakan metode MFCC dan Dynamic Time Warping. Library seperti os, librosa, numpy, pandas, glob, dan tqdm diimpor untuk membantu operasi file sistem, pemrosesan sinyal audio, perhitungan numerik, pengelolaan data tabular, pencarian file berformat tertentu, dan tampilan progres proses. Variabel SR (sampling rate) ditetapkan sebesar 22050 Hz untuk menentukan kualitas pembacaan audio, dan N_MFCC ditetapkan sebagai 13 untuk mengambil 13 koefisien MFCC dari setiap file audio. OLD_DIRS menyimpan path folder yang berisi data audio lama untuk kategori “buka” dan “tutup”, sedangkan NEW_FILES berisi path file audio baru yang akan dibandingkan. Terakhir, OUT_CSV adalah nama file tempat hasil perhitungan jarak DTW akan disimpan dalam format CSV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">SR</span> <span class="o">=</span> <span class="mi">22050</span>
+<span class="n">N_MFCC</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">OLD_DIRS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;buka&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;/content/user1/buka&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tutup&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;/content/user1/tutup&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">NEW_FILES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;buka_baru&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;/content/user1/bukabaru.wav&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tutup_baru&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;/content/user1/tutupbaru.wav&#39;</span>
+<span class="p">}</span>
+
+<span class="n">OUT_CSV</span> <span class="o">=</span> <span class="s1">&#39;dtw_results.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;librosa&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fungsi-extrac-dan-dtw">
+<h1>fungsi extrac dan DTW<a class="headerlink" href="#fungsi-extrac-dan-dtw" title="Link to this heading">#</a></h1>
+<p>kode di bawah terdiri dari dua fungsi utama untuk pemrosesan audio menggunakan MFCC dan perhitungan jarak Dynamic Time Warping (DTW). Fungsi extract_mfcc() bertugas membaca file audio dari path tertentu menggunakan librosa.load dengan sampling rate yang sudah ditentukan dan mengubahnya menjadi mono. Kemudian, fitur MFCC diekstraksi menggunakan librosa.feature.mfcc, dan hasilnya berupa matriks yang mewakili ciri khas suara tersebut. Fungsi kedua, dtw_distance(), mengambil dua matriks MFCC sebagai input (m1 dan m2) dan menghitung jarak antara keduanya menggunakan algoritma DTW dari librosa.sequence.dtw. Fungsi ini menghasilkan matriks biaya kumulatif D dan lintasan pemetaan wp. Nilai jarak mentah (raw cost) diambil dari elemen terakhir matriks D, lalu dibuat normalisasi jarak dengan membagi raw cost terhadap panjang lintasan (path length). Fungsi ini kemudian mengembalikan jarak mentah, jarak ter-normalisasi, dan panjang lintasan DTW sebagai hasil perbandingan kesamaan dua sinyal audio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extract_mfcc</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span> <span class="n">n_mfcc</span><span class="o">=</span><span class="n">N_MFCC</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">mono</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mfcc</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">mfcc</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">n_mfcc</span><span class="o">=</span><span class="n">n_mfcc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mfcc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dtw_distance</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">):</span>
+
+    <span class="n">D</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">dtw</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">m1</span><span class="p">,</span> <span class="n">Y</span><span class="o">=</span><span class="n">m2</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">)</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">path_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">raw</span> <span class="o">/</span> <span class="n">path_len</span> <span class="k">if</span> <span class="n">path_len</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">raw</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">norm</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">path_len</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="collect-data-lama-dan-ekstrak-mfcc">
+<h1>Collect data lama dan ekstrak mfcc<a class="headerlink" href="#collect-data-lama-dan-ekstrak-mfcc" title="Link to this heading">#</a></h1>
+<p>Potongan kode pertama bertujuan untuk mengumpulkan semua file audio lama (.wav) dari folder yang sudah ditentukan dalam OLD_DIRS. Dengan menggunakan glob, kode mencari semua file dengan ekstensi .wav pada masing-masing folder, lalu menyimpannya dalam dictionary old_files berdasarkan labelnya, yaitu buka dan tutup. Jika tidak ada file yang ditemukan di folder tersebut, program akan menampilkan pesan peringatan. Kemudian, proses ekstraksi MFCC dimulai untuk seluruh file lama. Dictionary old_mfcc dibuat untuk menyimpan hasil ekstraksi MFCC dari setiap file audio lama. Prosesnya dilakukan iteratif per label dan per file, dan tqdm digunakan untuk menampilkan progress bar agar visualisasi proses lebih informatif saat banyak file diproses.</p>
+<p>Selanjutnya, bagian kedua kode digunakan untuk mengekstraksi MFCC dari file audio baru (data uji), yang didefinisikan dalam NEW_FILES. Sebelum memproses file baru, program memastikan bahwa file benar-benar ada menggunakan os.path.exists. Jika path file tidak ditemukan, program langsung menghentikan eksekusi dan menampilkan pesan error melalui FileNotFoundError. Setelah file dipastikan ada, MFCC diekstraksi menggunakan fungsi extract_mfcc dan disimpan dalam dictionary new_mfcc. Data MFCC dari file baru ini nantinya akan dibandingkan dengan data MFCC dari file lama menggunakan perhitungan DTW untuk mengukur tingkat kemiripan sinyal audio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">old_files</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">OLD_DIRS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;*.wav&#39;</span><span class="p">)</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;~ Peringatan: tidak menemukan file di </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2"> (pattern </span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">old_files</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">files</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ekstrak MFCC untuk data lama...&quot;</span><span class="p">)</span>
+<span class="n">old_mfcc</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">old_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">old_mfcc</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;MFCC </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">):</span>
+        <span class="n">old_mfcc</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_mfcc</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ekstrak MFCC untuk file baru...&quot;</span><span class="p">)</span>
+<span class="n">new_mfcc</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">NEW_FILES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File baru tidak ditemukan: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">new_mfcc</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_mfcc</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ekstrak MFCC untuk data lama...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MFCC buka: 100%|██████████| 100/100 [00:01&lt;00:00, 55.04it/s]
+MFCC tutup: 100%|██████████| 100/100 [00:01&lt;00:00, 60.32it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ekstrak MFCC untuk file baru...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="perhitungan-dtw">
+<h1>perhitungan DTW<a class="headerlink" href="#perhitungan-dtw" title="Link to this heading">#</a></h1>
+<p>Potongan kode ini melakukan proses inti, yaitu perhitungan jarak antara data audio baru dan data audio lama menggunakan metode Dynamic Time Warping (DTW). Pertama, dibuat list kosong bernama rows untuk menampung hasil perhitungan. Kemudian, melalui tiga lapisan perulangan, setiap file baru (new_feat) dibandingkan dengan seluruh file lama berdasarkan labelnya (buka atau tutup). Dengan bantuan tqdm, progres perhitungan DTW divisualisasikan untuk setiap kombinasi file. Pada tiap iteration, MFCC dari file lama dan file baru diproses oleh fungsi dtw_distance() untuk menghasilkan tiga nilai: raw_cost (biaya kumulatif asli), normalized_cost (biaya DTW yang telah dinormalisasi), dan path_len (panjang jalur DTW). Semua informasi ini disimpan ke dalam dictionary, lalu ditambahkan ke list rows.</p>
+<p>Setelah semua pasangan file selesai dihitung, list rows dikonversi menjadi sebuah DataFrame menggunakan pandas untuk memudahkan analisis dan pengolahan data lebih lanjut. DataFrame ini kemudian diekspor menjadi file CSV dengan nama sesuai nilai variabel OUT_CSV (misalnya dtw_results.csv). File CSV yang dihasilkan berisi informasi lengkap tentang jarak DTW antara setiap file baru dan seluruh file lama, termasuk label, path file, nilai jarak, dan panjang jalur DTW. Bagian akhir kode menampilkan pesan konfirmasi bahwa proses perhitungan selesai dan hasil telah berhasil disimpan dalam file CSV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menghitung DTW...&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">new_name</span><span class="p">,</span> <span class="n">new_feat</span> <span class="ow">in</span> <span class="n">new_mfcc</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">old_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;DTW </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">m_old</span> <span class="o">=</span> <span class="n">old_mfcc</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">f</span><span class="p">]</span>
+            <span class="n">raw</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">plen</span> <span class="o">=</span> <span class="n">dtw_distance</span><span class="p">(</span><span class="n">m_old</span><span class="p">,</span> <span class="n">new_feat</span><span class="p">)</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;new_file&#39;</span><span class="p">:</span> <span class="n">new_name</span><span class="p">,</span>
+                <span class="s1">&#39;old_label&#39;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+                <span class="s1">&#39;old_path&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">,</span>
+                <span class="s1">&#39;raw_cost&#39;</span><span class="p">:</span> <span class="n">raw</span><span class="p">,</span>
+                <span class="s1">&#39;normalized_cost&#39;</span><span class="p">:</span> <span class="n">norm</span><span class="p">,</span>
+                <span class="s1">&#39;path_len&#39;</span><span class="p">:</span> <span class="n">plen</span>
+            <span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">OUT_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil tersimpan ke </span><span class="si">{</span><span class="n">OUT_CSV</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Menghitung DTW...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil tersimpan ke dtw_results.csv
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kemiripan-data-lama-dan-baru">
+<h1>kemiripan data lama dan baru<a class="headerlink" href="#kemiripan-data-lama-dan-baru" title="Link to this heading">#</a></h1>
+<p>Potongan kode ini digunakan untuk menampilkan 5 file lama yang paling mirip dengan setiap file baru berdasarkan hasil perhitungan DTW. Dengan mengambil data unik dari kolom new_file, kode memproses setiap file baru satu per satu. Untuk masing-masing file baru, dibuat subset DataFrame (sub) yang hanya berisi baris yang relevan, lalu diurutkan berdasarkan nilai normalized_cost dari yang terkecil. Nilai normalized cost yang lebih rendah menunjukkan tingkat kemiripan yang lebih tinggi. Kemudian, kode mencetak nama file baru sebagai judul dan menampilkan 5 baris teratas yang memuat informasi old_label (kategori buka/tutup), old_path (lokasi file lama), serta normalized_cost. Fungsi to_string(index=False) digunakan agar output lebih bersih tanpa menampilkan index DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top 5 file lama paling mirip untuk setiap file baru:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_name</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">== </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2"> ==&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sub</span><span class="p">[[</span><span class="s1">&#39;old_label&#39;</span><span class="p">,</span><span class="s1">&#39;old_path&#39;</span><span class="p">,</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top 5 file lama paling mirip untuk setiap file baru:
+
+== buka_baru ==
+old_label                           old_path  normalized_cost
+     buka /content/user1/buka/buka1 (73).wav        91.758524
+     buka /content/user1/buka/buka1 (72).wav        98.709102
+     buka /content/user1/buka/buka1 (74).wav        99.691555
+     buka /content/user1/buka/buka1 (90).wav       100.296021
+     buka /content/user1/buka/buka1 (77).wav       102.924713
+
+== tutup_baru ==
+old_label                           old_path  normalized_cost
+     buka /content/user1/buka/buka1 (73).wav       104.339551
+     buka /content/user1/buka/buka1 (77).wav       109.091945
+     buka /content/user1/buka/buka1 (71).wav       113.872330
+     buka /content/user1/buka/buka1 (74).wav       115.523999
+     buka /content/user1/buka/buka1 (72).wav       115.802941
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="visualisasi">
+<h1>Visualisasi<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h1>
+<p>kode ini digunakan untuk membuat berbagai visualisasi hasil perhitungan jarak DTW agar analisis kemiripan audio menjadi lebih mudah dipahami. Pertama, dibuat visualisasi berupa diagram batang (bar chart) yang menampilkan rata-rata normalized cost antara masing-masing file baru dengan dua kelas data lama (buka dan tutup). Grafik ini memberikan gambaran secara umum kelas mana yang lebih mirip dengan file baru berdasarkan nilai cost terendah. Selanjutnya, kode membuat histogram untuk menampilkan distribusi nilai normalized cost pada setiap kelas data lama, sehingga kita dapat melihat penyebaran dan variasi jarak DTW, apakah datanya homogen (nilai cost mirip satu sama lain) atau heterogen (nilai cost bervariasi besar). Kemudian, dibuat juga scatter plot, yang menunjukkan sebaran semua nilai normalized cost berdasarkan indeks file lama. Visualisasi ini membantu mengidentifikasi file mana yang memiliki jarak paling kecil atau paling besar terhadap file baru.</p>
+<p>Bagian terakhir dari kode adalah visualisasi paling mendalam, yakni DTW Warp Path (Alignment) untuk pasangan file baru dengan file lama paling mirip (nilai normalized cost terkecil). Pertama, kode mencari file lama terbaik (best match), lalu menghitung ulang DTW untuk kedua file tersebut. Matriks cumulative cost ditampilkan dalam bentuk heatmap menggunakan plt.imshow, dengan warp path (jalur penyelarasan) digambar menggunakan garis berwarna kuning. Jalur ini memperlihatkan bagaimana dua sinyal audio disejajarkan secara dinamis dari waktu ke waktu. Visualisasi ini sangat penting untuk memahami bagaimana DTW menyelaraskan perbedaan kecepatan pengucapan atau durasi antara dua audio, bukan hanya menunjukkan seberapa mirip mereka secara numerik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Menyiapkan visualisasi...&quot;</span><span class="p">)</span>
+
+<span class="n">summary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;new_file&#39;</span><span class="p">,</span> <span class="s1">&#39;old_label&#39;</span><span class="p">])[</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_name</span><span class="p">]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">s2</span><span class="p">[</span><span class="s1">&#39;old_label&#39;</span><span class="p">],</span> <span class="n">s2</span><span class="p">[</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rata-rata Normalized DTW Cost - </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized DTW Cost (Lower = Better)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kelas Data Lama&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;old_label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_name</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;old_label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">label</span><span class="p">)][</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distribusi Normalized DTW Cost - </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Normalized DTW Cost&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_name</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sub</span><span class="p">)),</span> <span class="n">sub</span><span class="p">[</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scatter Plot Normalized Cost - </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;File index&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized DTW Cost&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Visualisasi Warp Path (DTW Alignment) untuk file paling mirip:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">best_match</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;new_file&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">new_name</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;normalized_cost&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">best_old_file</span> <span class="o">=</span> <span class="n">best_match</span><span class="p">[</span><span class="s1">&#39;old_path&#39;</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DTW Alignment </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">best_old_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">m_new</span> <span class="o">=</span> <span class="n">new_mfcc</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span>
+    <span class="n">m_old</span> <span class="o">=</span> <span class="n">old_mfcc</span><span class="p">[</span><span class="n">best_match</span><span class="p">[</span><span class="s1">&#39;old_label&#39;</span><span class="p">]][</span><span class="n">best_old_file</span><span class="p">]</span>
+
+    <span class="n">D</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">dtw</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">m_old</span><span class="p">,</span> <span class="n">Y</span><span class="o">=</span><span class="n">m_new</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wp</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">wp</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DTW Cost Matrix &amp; Warp Path</span><span class="se">\n</span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">best_old_file</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time Index (Old File)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Time Index (New File)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Menyiapkan visualisasi...
+</pre></div>
+</div>
+<img alt="_images/3cfe1e0460c9c5275f82098702142f316c1886756732ee5f70aca44aaf11ca23.png" src="_images/3cfe1e0460c9c5275f82098702142f316c1886756732ee5f70aca44aaf11ca23.png" />
+<img alt="_images/f30c7b559c1de20dfebdfa576378f9f064e2632125d4319b21989a71627331d6.png" src="_images/f30c7b559c1de20dfebdfa576378f9f064e2632125d4319b21989a71627331d6.png" />
+<img alt="_images/07bea06e6ef1f0aa62416af844224e39cc96cbf23eaf857e8de1012773261e6e.png" src="_images/07bea06e6ef1f0aa62416af844224e39cc96cbf23eaf857e8de1012773261e6e.png" />
+<img alt="_images/d9b3c39e298ef884684e958a0ffe45c232773a96ba7e9ff5239cd430559b8745.png" src="_images/d9b3c39e298ef884684e958a0ffe45c232773a96ba7e9ff5239cd430559b8745.png" />
+<img alt="_images/04e910c137707cff0f48ff15156f61473b95915eaa2bba57532b66c7a3bc6b07.png" src="_images/04e910c137707cff0f48ff15156f61473b95915eaa2bba57532b66c7a3bc6b07.png" />
+<img alt="_images/1228bb0c4585b7909ebca2324b06d67d060884695ccb6350798c7cb77bcfcd29.png" src="_images/1228bb0c4585b7909ebca2324b06d67d060884695ccb6350798c7cb77bcfcd29.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Visualisasi Warp Path (DTW Alignment) untuk file paling mirip:
+
+DTW Alignment buka_baru vs /content/user1/buka/buka1 (73).wav
+</pre></div>
+</div>
+<img alt="_images/76ce11aa256043737cef760c4c09e52b1e295eec2a7d3bd5a24cb804bb9e5fa9.png" src="_images/76ce11aa256043737cef760c4c09e52b1e295eec2a7d3bd5a24cb804bb9e5fa9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DTW Alignment tutup_baru vs /content/user1/buka/buka1 (73).wav
+</pre></div>
+</div>
+<img alt="_images/4786e22921061c4772116c58f43357e22957d00206ac69eaf3504edf8a2a1b6e.png" src="_images/4786e22921061c4772116c58f43357e22957d00206ac69eaf3504edf8a2a1b6e.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="voicepredict.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">VOICE PREDICT UNTUK DATASET BUKA DAN TUTUP</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dynamic Time Wrapping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-set-path">Import Library dan Set Path</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-extrac-dan-dtw">fungsi extrac dan DTW</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collect-data-lama-dan-ekstrak-mfcc">Collect data lama dan ekstrak mfcc</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-dtw">perhitungan DTW</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kemiripan-data-lama-dan-baru">kemiripan data lama dan baru</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
